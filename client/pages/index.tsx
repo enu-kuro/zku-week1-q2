@@ -103,7 +103,7 @@ const mint = () => {
           signer
         )
         setLoading(true)
-        const nftTx = await nftContract.mint()
+        const nftTx = await nftContract.mint(await signer.getAddress())
         console.log('Mining....', nftTx.hash)
 
         const tx = await nftTx.wait()
@@ -134,6 +134,7 @@ const mint = () => {
         </button>
       ) : correctNetwork ? (
         <button
+          disabled={loading}
           className="mb-10 rounded-lg bg-[#f1c232] py-3 px-12 text-2xl font-bold transition duration-500 ease-in-out hover:scale-105"
           onClick={mintNFT}
         >
