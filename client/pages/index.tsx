@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react'
 import { ethers } from 'ethers'
 import { MetaMaskInpageProvider } from '@metamask/providers'
-// eslint-disable-next-line node/no-unpublished-import
-import NFTContract from '../../artifacts/contracts/NFT.sol/NFT.json'
+import NFTContract from '../NFT.json'
 declare global {
   // eslint-disable-next-line no-unused-vars
   interface Window {
